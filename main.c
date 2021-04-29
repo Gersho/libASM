@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:29:26 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/04/26 15:46:12 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 13:25:42 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
+#include <unistd.h>
 
 int	main(void)
 {
@@ -38,11 +39,13 @@ int	main(void)
 	printf("----\n");
 	printf("ft_strcmp: %d\n", ft_strcmp(test, src));
 	printf("real strcmp: %d\n", strcmp(test, src));
+	printf("----\n");
+	printf("ft_strcmp: %d\n", ft_strcmp("", ""));
+	printf("real strcmp: %d\n", strcmp("", ""));
 
 	printf("---- testing write ----\n");
-	ft_write(1, "Hello, World\n", 13);
+	printf("ret ft_write: %zu\n",ft_write(1, "Hello, World\n", 13));
+	printf("ret real write: %zu\n",write(1, "Hello, World\n", 13));
 
-
-	printf("still alive: end of main\n");
 	return (0);
 }

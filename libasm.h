@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:11:21 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/04/26 17:00:04 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 12:46:03 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char *  ft_strcpy(char * dst, const char * src);
 int     ft_strcmp(const char *s1, const char *s2);
 ssize_t ft_write(int fildes, const void *buf, size_t nbyte);
 ssize_t ft_read(int fildes, void *buf, size_t nbyte);
-//char *  ft_strdup(const char *s1);
+char *  ft_strdup(const char *s1);
 
 // ft_strlen (man 3 strlen)
 // ft_strcpy (man 3 strcpy)

@@ -4,9 +4,10 @@
 				section		.text
 _ft_write:		mov			rax, 0x02000004
 				syscall
-				; jc // jnc -->
-				; mov			rax, 0x02000001
-				; mov			rdi, 0
-				; syscall 
-				; call error
-error: ;si jc
+				jc			issue
+				ret
+issue:			mov         rdi, rax
+				call		___error
+				mov			[rax], rdi
+				mov			rax, -1
+				ret
