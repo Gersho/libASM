@@ -9,7 +9,7 @@ _ft_strdup:		push		rdi
 				call		_ft_strlen
 				mov			rdi, rax
 				inc			rdi
-				call		_malloc			;rax has s2 ptr
+				call		_malloc
 				cmp			rax, 0
 				je			issue
 				mov			rdi, rax

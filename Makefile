@@ -1,12 +1,19 @@
 SRCS	= ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
 
+BONUS	= ft_list_push_front.s
+
 OBJS		= $(SRCS:.s=.o)
+OBJSBONUS 	= $(BONUS:.s=.o)
 NAME 		= libasm.a
 NASM		= nasm
 NFLAGS		= -f macho64
 
 
 all: 		$(NAME)
+
+bonus:		$(OBJS) $(OBJSBONUS)
+			ar -cr libasm.a $^
+			gcc main.c libasm.a libasm.h
 
 %.o: 		%.s
 			$(NASM) $(NFLAGS) $^
