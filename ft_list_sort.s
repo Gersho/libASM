@@ -10,23 +10,25 @@ _ft_list_sort:	push		r12		; 1 in stack
 				mov			r14, [r12]
 				mov			r15, r12
 				jmp			while1
-while1:			cmp			[r14 + 8], 0
+while1:			cmp			qword [r14 + 8], 0
 				je			exit
 				mov			rdi, [r14]
 				mov			r9, [r14 + 8]
 				mov			rsi, [r9]
 				call		r13
 				cmp			rax, 0
-				jle			swap	; jle jge ?
+				jle			swap	; jle jge ?    ; problem here ?
 				;prepare next loop
 				mov			r15, r14
 				mov			r14, [r14 + 8]
 				jmp			while1
-
-; swap:			mov			r10, [r14 + 8]
-; 				mov			[r15 + 8], r10
-
-; 				mov			[r10 + 8], 
+swap:			
+				mov			r10, [r14 + 8] ;1
+				mov			[r15 + 8], r10 ;1
+				mov			r9, [r10 + 8];3
+				mov			[r14 + 8], r9 ;3
+				mov			[r10 + 8], r14 ; 2
+				jmp			resetloop
 		
 		
 		;swp r14 et son next ; need previous to change ptr netx ?

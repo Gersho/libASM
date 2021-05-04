@@ -13,7 +13,7 @@ all: 		$(NAME)
 
 bonus:		$(OBJS) $(OBJSBONUS)
 			ar -cr libasm.a $^
-			gcc main.c libasm.a libasm.h
+			gcc main_bonus.c libasm.a libasm.h -g
 
 %.o: 		%.s
 			$(NASM) $(NFLAGS) $^
@@ -24,6 +24,7 @@ $(NAME):	$(OBJS)
 
 clean:
 			rm -f $(OBJS)
+			rm -f $(OBJSBONUS)
 
 fclean:		clean
 			rm -f $(NAME)
