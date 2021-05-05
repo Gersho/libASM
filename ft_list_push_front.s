@@ -4,7 +4,8 @@
 		extern ___error
 
 					section		.text
-_ft_list_push_front:	push 	rdi
+_ft_list_push_front:	
+						push 	rdi
 						mov		rdi, rsi
 						call	_ft_create_element
 						cmp		rax, -1
@@ -15,7 +16,8 @@ _ft_list_push_front:	push 	rdi
 						mov		[rdi], rax
 						mov		rax, 0
 						ret
-_ft_create_element:		push	rdi
+_ft_create_element:		
+						push	rdi
 						mov		rdi, 16
 						call	_malloc
 						cmp		rax, 0
@@ -24,5 +26,6 @@ _ft_create_element:		push	rdi
 						mov		[rax] ,rdi
 						mov		qword[rax + 8], 0
 						ret
-issue:					mov		rax, -1
+issue:					
+						mov		rax, -1
 						ret

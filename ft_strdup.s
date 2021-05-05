@@ -5,7 +5,8 @@
 		extern _ft_strcpy
 
 				section		.text
-_ft_strdup:		push		rdi
+_ft_strdup:		
+				push		rdi
 				call		_ft_strlen
 				mov			rdi, rax
 				inc			rdi
@@ -16,5 +17,6 @@ _ft_strdup:		push		rdi
 				pop			rsi
 				call		_ft_strcpy
 				ret
-issue:			mov			rax, -1
+issue:			
+				mov			rax, -1
 				ret
