@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 15:14:57 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/05/04 16:31:54 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/05/05 14:36:33 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,25 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+// int	a_is_lower(int *a, int *b)
+// {
+// 	return *a < *b;
+// }
+
 int main(void)
 {
 	t_list	lst[4];
 	t_list	*start;
 	int		a = 1;
 	int		b = 2;
-	char	ca [] = "blabla";
-	char	cb [] = "atchoum";
-	char	cc [] = "au revoir";
-	char	cd [] = "bonjour";
+	char	ca [] = "bbb";
+	char	cb [] = "ccc";
+	char	cc [] = "ddd";
+	char	cd [] = "aaa";
+	int		ia = 5;
+	int		ib = 74;
+	int		ic = -140;
+	int		id = 42;
 	
 	printf("---- testing list_size ----\n");
 	lst[0].next = NULL;
@@ -56,6 +65,11 @@ int main(void)
 
 
 	printf("---- testing list_sort ----\n");
+
+	lst[0].next = &lst[1];
+	lst[1].next = &lst[2];
+	lst[2].next = &lst[3];
+	lst[3].next = NULL;
 	start = &lst[0];
 	lst[0].data = &ca;
 	lst[1].data = &cb;
@@ -71,10 +85,39 @@ int main(void)
 
 	start = &lst[0];
 	ft_list_sort(&start, strcmp);
-	
+	printf("after sorting\n");
 	while(start)
 	{
 		printf("%s ,", (char*)start->data);
 		start = start->next;
 	}
+	printf("\n");
+
+
+	// lst[0].next = &lst[1];
+	// lst[1].next = &lst[2];
+	// lst[2].next = &lst[3];
+	// lst[3].next = NULL;
+	// start = &lst[0];
+	// lst[0].data = &ia;
+	// lst[1].data = &ib;
+	// lst[2].data = &ic;
+	// lst[3].data = &id;
+	// printf("before sorting\n");
+	// while(start)
+	// {
+	// 	printf("%d ,", (int)start->data);
+	// 	start = start->next;
+	// }
+	// printf("\n");
+
+	// start = &lst[0];
+	// ft_list_sort(&start, a_is_lower);
+	// printf("after sorting\n");
+	// while(start)
+	// {
+	// 	printf("%d ,", (int)start->data);
+	// 	start = start->next;
+	// }
+
 }
