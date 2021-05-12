@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:29:26 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/05/04 15:15:27 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/05/12 11:41:19 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int	main(void)
 
 	printf("---- testing strlen ----\n");
 	printf("ft_strlen: %zu\n", ft_strlen(test));
-	printf("___strlen: %zu\n", strlen(test));
+	printf("___strlen: %zu\n\n", strlen(test));
 
 	printf("---- testing strcpy ----\n");
 	ft_strcpy(dst_ft, src);
 	printf("ft_strcpy: %s\n", dst_ft);
 	strcpy(dst_real, src);
-	printf("___strcpy: %s\n", dst_real);
+	printf("___strcpy: %s\n\n", dst_real);
 
 	printf("---- testing strcmp ----\n");
 	printf("ft_strcmp: %d\n", ft_strcmp(dst_ft, src));
@@ -50,11 +50,11 @@ int	main(void)
 	printf("___strcmp: %d\n", strcmp(test, src));
 	printf("----\n");
 	printf("ft_strcmp: %d\n", ft_strcmp("", ""));
-	printf("___strcmp: %d\n", strcmp("", ""));
+	printf("___strcmp: %d\n\n", strcmp("", ""));
 
 	printf("---- testing write ----\n");
 	printf("ret ft_write: %zu\n",ft_write(1, "Hello, World\n", 13));
-	printf("ret ___write: %zu\n",write(1, "Hello, World\n", 13));
+	printf("ret ___write: %zu\n\n",write(1, "Hello, World\n", 13));
 
 	printf("---- testing read ----\n");
 	fd = open("ft_strlen.s", O_RDONLY);
@@ -76,7 +76,7 @@ int	main(void)
 	fd = open("Makefile", O_RDONLY);
 	read(fd, str, 15);
 	str[15] = 0;
-	printf("___read:%s\n", str);
+	printf("___read:%s\n\n", str);
 	close(fd);
 
 

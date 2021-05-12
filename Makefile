@@ -8,17 +8,16 @@ NAME 		= libasm.a
 NASM		= nasm
 NFLAGS		= -f macho64
 
-
 all: 		$(NAME)
 
-bonus:		$(OBJS) $(OBJSBONUS)
+bonus:		$(OBJS) $(OBJSBONUS) libasm.h
 			ar -cr libasm.a $^
-			gcc main_bonus.c libasm.a libasm.h -g
+			gcc main_bonus.c libasm.a libasm.h
 
 %.o: 		%.s
 			$(NASM) $(NFLAGS) $^
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) libasm.h
 			ar -cr libasm.a $^
 			gcc main.c libasm.a libasm.h
 
